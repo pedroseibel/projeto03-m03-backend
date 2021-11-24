@@ -8,6 +8,9 @@ const conn = require("./model/conn/index");
 
 conn();
 
+app.use(cors());
+app.options("*", cors()); 
+
 app.get('/', (req,res) => {
     res.status(200).json({message:"Zoo"});
 });
