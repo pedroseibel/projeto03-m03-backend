@@ -12,7 +12,7 @@ exports.getAll = async (req,res) => {
 
 exports.getSingle = async (req,res) => {
     const nome = req.params.id;
-    await Animalia.find({ _id:nome }).then((Animalia) => { 
+    await Animalia.findOne({ _id:nome }).then((Animalia) => { 
         console.log(Animalia);
         if(Animalia == null){ 
             res.status(404).json({message: "Não foi possível encontrar."});
