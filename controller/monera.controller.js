@@ -12,7 +12,7 @@ exports.getAll = async (req,res) => {
 
 exports.getSingle = async (req,res) => {
     const nome = req.params.id;
-    await Monera.find({ _id:nome }).then((Monera) => { 
+    await Monera.findOne({ _id:nome }).then((Monera) => { 
         console.log(Monera);
         if(Monera == null){ 
             res.status(404).json({message: "Não foi possível encontrar."});

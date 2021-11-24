@@ -12,7 +12,7 @@ exports.getAll = async (req,res) => {
 
 exports.getSingle = async (req,res) => {
     const nome = req.params.id;
-    await Protista.find({ _id:nome }).then((Protista) => { 
+    await Protista.findOne({ _id:nome }).then((Protista) => { 
         console.log(Protista);
         if(Protista == null){ 
             res.status(404).json({message: "Não foi possível encontrar."});

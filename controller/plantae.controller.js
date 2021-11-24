@@ -12,7 +12,7 @@ exports.getAll = async (req,res) => {
 
 exports.getSingle = async (req,res) => {
     const nome = req.params.id;
-    await Plantae.find({ _id:nome }).then((Plantae) => { 
+    await Plantae.findOne({ _id:nome }).then((Plantae) => { 
         console.log(Plantae);
         if(Plantae == null){ 
             res.status(404).json({message: "Não foi possível encontrar."});
